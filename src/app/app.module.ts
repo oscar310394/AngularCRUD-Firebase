@@ -11,6 +11,8 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {TaskService} from './services/task.service';
 
+import {FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,13 @@ import {TaskService} from './services/task.service';
     AddTasksComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-fs')
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
