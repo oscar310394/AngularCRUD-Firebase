@@ -31,12 +31,12 @@ export class TaskService {
   }
 
   deleteTask(task:Task){
-    this.taskDoc = this.afs.doc('tasks/${task.id}');
+    this.taskDoc = this.afs.doc(`tasks/${task.id}`);
     this.taskDoc.delete();
   }
 
   updateTask(task:Task){
-    this.taskDoc = this.afs.doc('tasks/${task.id}');
+    this.taskDoc = this.afs.doc(`tasks/${task.id}`);
     this.taskDoc.update(task);
   }
 
